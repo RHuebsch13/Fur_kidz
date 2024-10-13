@@ -25,6 +25,7 @@ header {
 }
 
 /* Styling for buttons and text */
+/* Styling for buttons and text */
 .shop-now-button {
     background: white; /* Default background is white */
     color: black; /* Default text color is black */
@@ -48,6 +49,14 @@ header {
 .btn-black:focus {
     background: black; /* Button background turns black on hover */
     color: white !important; /* Force the text to be white on hover */
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
 }
 
 /* Media Queries */
