@@ -3,11 +3,11 @@ html {
 }
 
 body {
-    background: url('/static/background.png') no-repeat center center fixed;
+    background: url('/media/bg.png') no-repeat center center fixed;
     background-size: cover;
+    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
-    margin: 0;
 }
 
 /* Header styling */
@@ -26,32 +26,28 @@ header {
 
 /* Styling for buttons and text */
 .shop-now-button {
-    background: black;
-    color: white;
+    background: white; /* Default background is white */
+    color: black; /* Default text color is black */
     min-width: 260px;
-}
-
-.btn-black {
-    background: black;
-    color: white;
 }
 
 .shop-now-button:hover,
 .shop-now-button:active,
-.shop-now-button:focus,
+.shop-now-button:focus {
+    background: black; /* Button background turns black on hover */
+    color: white !important; /* Force the text to be white on hover */
+}
+
+.btn-black {
+    background: white; /* Default background */
+    color: black; /* Default text color */
+}
+
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
-}
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
+    background: black; /* Button background turns black on hover */
+    color: white !important; /* Force the text to be white on hover */
 }
 
 /* Media Queries */
