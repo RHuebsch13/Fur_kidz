@@ -13,19 +13,21 @@ from pathlib import Path
 import os
 import environ
 
+# Load environment variables from env.py if it exists
 try:
     from .env import SECRET_KEY
 except ImportError:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-4eqa5c2otrn.ws.codeinstitute-ide.net']
+# Directly set the ALLOWED_HOSTS
+ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net']
+
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-rhuebsch13-furkidz-4eqa5c2otrn.ws.codeinstitute-ide.net'
+    'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net'
 ]
 
 # Application definition
