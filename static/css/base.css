@@ -24,31 +24,19 @@ header {
     max-height: 100px; 
 }
 
-/* Styling for buttons and text */
-/* Styling for buttons and text */
+/* Styling for the 'Shop Now' button */
 .shop-now-button {
-    background: white; /* Default background is white */
-    color: black; /* Default text color is black */
+    background: #e9bebe; 
+    color: black; 
     min-width: 260px;
+    margin-right: 20px; 
+    display: inline-block;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus {
-    background: black; /* Button background turns black on hover */
-    color: white !important; /* Force the text to be white on hover */
-}
-
-.btn-black {
-    background: white; /* Default background */
-    color: black; /* Default text color */
-}
-
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: black; /* Button background turns black on hover */
-    color: white !important; /* Force the text to be white on hover */
+/* Hover, active, and focus state: button turns white with black text */
+.shop-now-button:hover {
+    background: black; 
+    color: white !important; 
 }
 
 .text-black {
