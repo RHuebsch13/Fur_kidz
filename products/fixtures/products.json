@@ -1,0 +1,142 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001340159",
+            "name": "Cat Bed with Attached Scratch Post",
+            "description": "A cozy cat bed featuring an attached scratch post for your feline friend.",
+            "price": 79.99,
+            "category": 1,
+            "rating": 4.7,
+            "image_url": "/media/cat bed 1.jpg",
+            "image": "cat bed 1.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350000",
+            "name": "Cat Bed with Attached Scratch Post and Internal Hammock",
+            "description": "A luxurious cat bed that includes a hammock for added comfort.",
+            "price": 89.99,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "/media/cat bed 2.webp",
+            "image": "cat bed 2.webp"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350001",
+            "name": "Feather Pole Cat Toy",
+            "description": "An engaging feather pole toy to keep your cat entertained for hours.",
+            "price": 12.99,
+            "category": 2,
+            "rating": 4.5,
+            "image_url": "/media/cat toy 1.webp",
+            "image": "cat toy 1.webp"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350002",
+            "name": "Feathered Fish Cat Toy",
+            "description": "A soft and fun feathered fish toy for playful cats.",
+            "price": 9.99,
+            "category": 2,
+            "rating": 4.6,
+            "image_url": "/media/cat toy 2.webp",
+            "image": "cat toy 2.webp"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350003",
+            "name": "Homemade Fish Shaped Cat Treats",
+            "description": "Delicious homemade fish-shaped treats for your cat.",
+            "price": 7.99,
+            "category": 4,
+            "rating": 4.9,
+            "image_url": "/media/cat treats.jpg",
+            "image": "cat treats.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350004",
+            "name": "Mini-Bed Dog Bed",
+            "description": "A comfy mini-bed designed for small dogs.",
+            "price": 49.99,
+            "category": 1,
+            "rating": 4.7,
+            "image_url": "/media/dog bed 1.jpg",
+            "image": "dog bed 1.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350005",
+            "name": "Medium Dog Basket Bed",
+            "description": "A stylish medium basket bed for your furry friend.",
+            "price": 59.99,
+            "category": 1,
+            "rating": 4.8,
+            "image_url": "/media/dog bed 2.jpg",
+            "image": "dog bed 2.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350006",
+            "name": "Multi-Coloured Tennis Balls Dog Toy",
+            "description": "A set of colorful tennis balls perfect for your dog's playtime.",
+            "price": 14.99,
+            "category": 2,
+            "rating": 4.6,
+            "image_url": "/media/dog toy 1.jpg",
+            "image": "dog toy 1.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350007",
+            "name": "Spiked Chew Toy for Dogs",
+            "description": "A durable spiked chew toy to keep your dog occupied.",
+            "price": 19.99,
+            "category": 2,
+            "rating": 4.5,
+            "image_url": "/media/dog toy 2.jpg",
+            "image": "dog toy 2.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001350008",
+            "name": "Homemade Bone Shaped Dog Treats",
+            "description": "Tasty homemade bone-shaped treats for your dog.",
+            "price": 8.99,
+            "category": 4,
+            "rating": 4.8,
+            "image_url": "/media/dog treats.jpg",
+            "image": "dog treats.jpg"
+        }
+    }
+]
