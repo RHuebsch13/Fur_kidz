@@ -1,0 +1,1 @@
+web: gunicorn Fur_kidz.wsgi --log-file -

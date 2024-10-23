@@ -26,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 # Directly set the ALLOWED_HOSTS
-ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net'
+    'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git'
 ]
 
 # Application definition
