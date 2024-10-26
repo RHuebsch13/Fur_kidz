@@ -16,10 +16,6 @@ header {
     height: 100px; 
 }
 
-header #same-colour {
-    background-color: #FAF0F0 !important; /* Use only if necessary */
-}
-
 .header-container {
     padding-top: 10px; 
 }
