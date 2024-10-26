@@ -13,9 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import environ
-import dj_database_url  # Add this import for database URL handling
+import dj_database_url  
 
-# Load environment variables from env.py if it exists
 try:
     from .env import SECRET_KEY
 except ImportError:
@@ -25,14 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-# Directly set the ALLOWED_HOSTS
 ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git'
 ]
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'home',
     'products',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Fur_kidz.urls'
@@ -106,7 +104,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'Fur_kidz.wsgi.application'
 
-# PostgreSQL Database configuration using the database URL
+# PostgreSQL Database
 DATABASES = {
     'default': dj_database_url.config(
         default='postgres://uvm6pobvuvv:iBYrgvGNPaWC@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/ivory_react_ebony_658761'
@@ -149,6 +147,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

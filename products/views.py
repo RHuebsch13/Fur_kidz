@@ -1,16 +1,64 @@
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
+from .models import Product, Category
 
 # Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-
+    
     products = Product.objects.all()
-    print(products)  # Debugging line
+    query = None
+    categories = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse('products'))
+            
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
+        'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'products/products.html', context)
+
+
+def product_detail(request, product_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_detail.html', context)
+
+
+def category_products(request, category_id):
+    """ A view to show all products in a specific category """
+    products = Product.objects.filter(category__id=category_id)
+    category = get_object_or_404(Category, pk=category_id)
+
+    context = {
+        'products': products,
+        'category': category,
+    }
+
+    return render(request, 'products/category_products.html', context)
+
+
+

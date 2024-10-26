@@ -14,28 +14,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h2 class="logo-font">{{ category.friendly_name }}</h2>
                 <hr class="w-50 mb-1">
-            </div>
-        </div>
-
-        <!-- Categories Section -->
-        <div class="row">
-            <div class="col text-center">
-                <div class="category-list mb-4">
-                    {% for category in categories %}
-                        <a href="{% url 'products' %}?category={{ category.name }}" class="btn btn-outline-primary m-1">
-                            {{ category.friendly_name }}
-                        </a>
-                    {% endfor %}
-                </div>
             </div>
         </div>
 
         <!-- Products Section -->
         <div class="row">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -86,14 +72,15 @@
                                 <hr>
                             </div>
                         {% endif %}
+                    {% empty %}
+                        <div class="col-12 text-center">
+                            <p>No products found in this category.</p>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        console.log('Product template loaded');
-    </script>
 {% endblock %}
+
 

@@ -138,5 +138,62 @@
             "image_url": "/media/dog treats.jpg",
             "image": "dog treats.jpg"
         }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "sku": "C001",
+            "name": "Cat Outfit Orange with Hat",
+            "description": "A stylish orange outfit for cats, complete with a cute hat.",
+            "price": "24.99",
+            "rating": 4.3,
+            "image_url": "/media/cat outfit orange with hat.jpg",
+            "image": "cat outfit orange with hat.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "sku": "C002",
+            "name": "Cat Bee Outfit",
+            "description": "A fun bee outfit for cats, perfect for playful occasions.",
+            "price": "19.99",
+            "rating": 4.1,
+            "image_url": "/media/cat bee outfit.webp" ,
+            "image": "cat bee outfit.webp"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "sku": "D001",
+            "name": "Large Dog Long Sleeve Jersey Strawberry",
+            "description": "A cozy long-sleeve jersey for large dogs with a strawberry design.",
+            "price": "29.99",
+            "rating": 4.8,
+            "image_url": "/media/large dog outfit.png",
+            "image": "large dog outfit.png"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "category": 3,
+            "sku": "D002",
+            "name": "Small Dog Short Sleeve Jersey",
+            "description": "A short-sleeve jersey perfect for small dogs.",
+            "price": "14.99",
+            "rating": 4.5,
+            "image_url": "/media/small dog short shelve jersey.webp",
+            "image": "small dog short shelve jersey.webp"
+        }
     }
 ]
+
