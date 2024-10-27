@@ -102,10 +102,11 @@
                 </button>
                 <!-- Collapsible content with main navigation items -->
                 <div class="collapse navbar-collapse justify-content-center" id="main-nav">
+                    {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
                 </div>
             </nav>
-        </div>
+        </div>    
     </header>
 
     {% if messages %}
