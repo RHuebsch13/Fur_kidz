@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'home',
     'products',
+    'bag',
     'whitenoise.runserver_nostatic',
 ]
 
