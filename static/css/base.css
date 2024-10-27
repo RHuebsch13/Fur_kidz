@@ -26,7 +26,7 @@ header {
 
 
 /* Styling for the 'Shop Now' button */
-.shop-now-button {
+.shop-now-button .btn-outline-black {
     background: #e9bebe; 
     color: black; 
     min-width: 260px;

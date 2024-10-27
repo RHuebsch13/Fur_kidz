@@ -13,31 +13,28 @@
             </div>
         </li>
 
-        <!-- Beds Category -->
+        <!-- Categories Links -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'category_products' 1 %}">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=1">
                 Beds
             </a>
         </li>
-
-        <!-- Toys Category -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'category_products' 2 %}">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=2">
                 Toys
             </a>
         </li>
-
-        <!-- Treats Category -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'category_products' 4 %}">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=4">
                 Treats
             </a>
         </li>
-
-        <!-- Outfits Category -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'category_products' 3 %}">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=3">
                 Outfits
             </a>
         </li>
+    </ul>
+</div>
+
 
