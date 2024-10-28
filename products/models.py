@@ -26,6 +26,9 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-
+    is_outfit = models.BooleanField(default=False)
+    back_length = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
+    chest_girth = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
+    height_from_ground_to_wither = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
     def __str__(self):
         return self.name
