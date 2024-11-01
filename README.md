@@ -94,7 +94,66 @@ Allow users to easily:
 ## Features
 
 ### Existing Features
+
+
+#### User Account Management
+- **User Registration/Login**: Allow customers to create accounts and log in to view their order history and save preferences.
+- **Profile Management**: Users can update their personal information, shipping addresses, and payment methods.
+
+#### Product Management
+- **Product Catalog**: Display products with images, descriptions, prices, and specifications.
+- **Categories and Filters**: Organize products into categories and enable filtering by various attributes (size, color, price range, etc.).
+- **Product Search**: A search bar that allows users to find products quickly.
+
+#### Shopping Cart
+- **Add to Cart**: Users can add items to a virtual shopping cart.
+- **View Cart**: Users can view the contents of their cart, including quantities and total prices.
+- **Update Cart**: Options to change quantities or remove items from the cart.
+
+#### Checkout Process
+- **Secure Checkout**: A secure page for users to enter payment and shipping information.
+- **Guest Checkout**: Allow users to purchase without creating an account.
+- **Order Summary**: Provide a summary of the order before finalizing the purchase.
+- **Integrated Payment Gateway**: Handle transactions securely through third-party services like Stripe.
+
+#### Reviews and Ratings
+- **Customer Reviews**: Allow users to leave feedback and rate products.
+
+#### Mobile Responsiveness
+- **Mobile-Friendly Design**: Ensure the website is responsive and usable on smartphones and tablets.
+
+#### Security Features
+- **SSL Certificate**: Secure the site with HTTPS to protect user data during transactions.
+- **Data Protection**: Compliance with regulations (like GDPR) to protect user data.
+
+
 ### Left to Implement
+
+#### Shipping and Delivery
+- **Shipping Options**: Offer multiple shipping methods (standard, express, international, etc.).
+- **Shipping Cost Calculation**: Automatically calculate shipping costs based on user location and selected shipping method.
+- **Tracking Information**: Provide users with tracking information for their shipments.
+
+#### Customer Support
+- **Contact Us**: A page or section where customers can reach support via email, chat, or phone.
+- **FAQs**: Frequently asked questions section to help users find answers quickly.
+- **Live Chat**: Instant messaging support for real-time assistance.
+
+#### Reviews and Ratings
+- **Review Moderation**: Enable site administrators to approve or reject reviews.
+
+#### Marketing Features
+- **Discount Codes and Coupons**: Allow users to apply promotional codes during checkout.
+- **Email Marketing Integration**: Capture user emails for newsletters and promotional campaigns.
+- **Abandoned Cart Recovery**: Send reminders to users who leave items in their cart without completing the purchase.
+
+#### Analytics and Reporting
+- **Sales Reports**: Generate reports on sales, revenue, and inventory levels.
+- **User Behavior Analytics**: Track how users interact with the site for insights on improving the user experience.
+
+#### Social Media Integration
+- **Social Sharing Buttons**: Allow users to share products on social media platforms.
+- **Social Login**: Enable users to register and log in using their social media accounts.
 
 ## Technology Used
 - Languages: HTML, CSS, JavaScript, Python
@@ -118,13 +177,87 @@ Allow users to easily:
 ### Results
 
 #### Manual Testing
-- CREATE
-- READ
-- UPDATE
-- DELETE
-- LOGIN
-- GUARDING FROM FORCED ACTIONS
-- NAVIGATION
+##### 1. CREATE
+- **Expected**: Users can create an account and add products to their cart.
+- **Testing**: 
+  - Registered a new user account successfully.
+  - Added products to the shopping cart.
+- **Result**: 
+  - The account was created, and products were added to the cart as expected.
+- **Fix**: No issues encountered.
+
+##### 2. READ
+- **Expected**: Users can view product listings, details, and their cart total.
+- **Testing**: 
+  - Accessed product listings and detailed product pages.
+  - Monitored the cart total while adding/removing products.
+- **Result**: 
+  - Content not responsive to smaller screens.
+- **Fix**: Adjusted media queries. 
+
+##### 3. UPDATE
+- **Expected**: Users can edit their profiles, update product quantities in their cart.
+- **Testing**: 
+  - Updated user profile information.
+  - Changed product quantities in the cart.
+- **Result**: 
+  - Remove button removed all products from bag. Not one at a time if more than one of the same item.
+- **Fix**: Updated handling so that one item at a time was removed if there was more than one of the same item.
+
+##### 4. DELETE
+- **Expected**: Users can delete their accounts and remove products from their cart, while administrators can remove products from inventory.
+- **Testing**: 
+  - Deleted a user account.
+  - Removed products from the shopping cart.
+  - Removed products from inventory as an administrator.
+- **Result**: 
+  - Account and product deletions executed successfully.
+- **Fix**: No issues encountered.
+
+##### 5. LOGIN
+- **Expected**: Users can log in and log out easily.
+- **Testing**: 
+  - Successfully logged in with valid credentials and logged out.
+  - Attempted login with invalid credentials to test error handling.
+- **Result**: 
+  - Login and logout functions worked as intended, and appropriate error messages displayed for failed attempts.
+- **Fix**: No issues encountered.
+
+##### 6. GUARDING FROM FORCED ACTIONS
+- **Expected**: Users cannot access restricted pages without proper authentication.
+- **Testing**: 
+  - Attempted to access admin pages without logging in.
+- **Result**: 
+  - Access was denied, and users were redirected to the login page.
+- **Fix**: No issues encountered.
+
+##### 7. NAVIGATION
+- **Expected**: Users can navigate through the site easily.
+- **Testing**: 
+  - Tested all navigation links (home, categories, product pages).
+  - Ensured responsive design on various devices.
+- **Result**: 
+  - All links worked correctly, and the site was responsive.
+- **Fix**: No issues encountered.
+
+## User Stories Integration
+
+1. **Viewing and Navigation**
+   - Successfully viewed product listings and detailed product descriptions.
+   - The homepage is clear and organized, showcasing featured products and popular categories.
+   - Users can easily view their purchase total at any time.
+   - BUGS: item images not responsive on smaller screens, updated media queries.
+
+2. **Registration and User Accounts**
+   - Users can create accounts, log in and out easily, recover passwords, and receive confirmation emails upon registration.
+
+3. **Scrolling and Searching**
+   - The search functionality is responsive and accurate.
+   - Users can filter and sort products effectively by various criteria.
+
+4. **Purchasing and Checkout**
+   - The checkout process is simple and secure, allowing users to view cart summaries and receive email confirmations after purchases.
+   - BUGS: JS file for Stripe elements was not loading correctly. Corrected file path
 
 #### Automation Test
 Automation testing is a software testing process that uses specialized tools and scripts to automatically execute test cases, compare actual results with expected outcomes, and report discrepancies. An example of this software is Jest. Only manual testing will be used for this development.
@@ -190,7 +323,23 @@ Automation testing is a software testing process that uses specialized tools and
 
 ## Credits
 ### Code
+- Code institute Boutique Ado 
+- [Stripe](https://docs.stripe.com/)
+- [Django](https://docs.djangoproject.com/en/5.1/)
+- [w3schools](https://www.w3schools.com/python/)
+- [Payton Clark Smith](https://www.youtube.com/watch?v=mRWdhN4XFzo)
+
+
 ### Content
 ### Media
 - [background image](https://www.shutterstock.com/image-photo/cute-dog-411895951?irclickid=yRMyssWdexyPRkhzyd03My66UkCWOJwuiXGeWQ0&irgwc=1&pl=77643-108110&utm_campaign=TinEye&utm_content=108110&utm_medium=Affiliate&utm_source=77643&utm_term=)
+- [stock images](https://www.deviantart.com/)
+- [stock images](https://www.pexels.com/)
+- [stock images](https://www.flickr.com/)
+- [stock images](https://www.pickpik.com/)
+- [stock images](https://www.thecookierookie.com/)
+- [stock image](https://longtermcarelink.wordpress.com/)
+- [stock images](https://pixabay.com/)
+
 ### Design Inspiration
+- Boutique Ado 

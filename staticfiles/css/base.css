@@ -1,0 +1,164 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Lato';
+}
+
+/* Header styling */
+header {
+    background-color: #FAF0F0;
+    height: 100px; 
+}
+
+.header-container {
+    padding-top: 10px; 
+}
+
+.header-container img {
+    max-height: 100px; 
+}
+
+
+/* Styling for the 'Shop Now' button */
+.shop-now-button {
+    background: #e9bebe; 
+    color: black; 
+    min-width: 260px;
+    margin-right: 20px; 
+    display: inline-block;
+}
+
+/* Hover, active, and focus state: button turns white with black text */
+.shop-now-button:hover {
+    background: black; 
+    color: white !important; 
+}
+
+.add-to-bag{
+    background: #e9bebe; 
+    border: 1px solid black;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/* bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Media Queries */
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+      .fixed-top-desktop-only {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1030;
+      }
+  
+      .header-container {
+          padding-top: 164px;
+      }
+  }
+  
+  @media (max-width: 991px) {
+      .header-container {
+          padding-top: 116px;
+      }
+  
+      body {
+          height: calc(100vh - 116px);
+      }
+  }
