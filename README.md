@@ -189,7 +189,8 @@ Automation testing is a software testing process that uses specialized tools and
    - Once the build is complete, click on 'Open App' to launch the new app.
 
 ## Credits
-- Code
-- Content
-- Media
-- Design Inspiration
+### Code
+### Content
+### Media
+- [background image](https://www.shutterstock.com/image-photo/cute-dog-411895951?irclickid=yRMyssWdexyPRkhzyd03My66UkCWOJwuiXGeWQ0&irgwc=1&pl=77643-108110&utm_campaign=TinEye&utm_content=108110&utm_medium=Affiliate&utm_source=77643&utm_term=)
+### Design Inspiration

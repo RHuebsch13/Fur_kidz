@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
-from django.http import HttpResponse
 
 # Create your views here.
 
