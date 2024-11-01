@@ -22,4 +22,15 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
 
     return redirect(redirect_url)
+
+def remove_from_bag(request, item_id):
+    bag = request.session.get('bag', {})
+    if item_id in bag:
+        # Decrease the quantity by 1
+        if bag[item_id] > 1:
+            bag[item_id] -= 1
+        else:
+            del bag[item_id]  # Remove the item completely if quantity is 1
+        request.session['bag'] = bag
+    return redirect('view_bag')
     

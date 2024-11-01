@@ -29,6 +29,14 @@ class Product(models.Model):
     is_outfit = models.BooleanField(default=False)
     back_length = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
     chest_girth = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
-    height_from_ground_to_wither = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  
+    height_from_ground_to_wither = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    length = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    width = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    height = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+
+    def dimensions(self):
+        return f"{self.length}cm x {self.width}cm x {self.height}cm"
+        
     def __str__(self):
         return self.name
+
