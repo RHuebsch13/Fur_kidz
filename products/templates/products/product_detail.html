@@ -57,6 +57,19 @@
                         {% endif %}
                     {% endif %}
 
+                    {% if product.category and product.category.name == 'bedding' %}
+                    <p><strong>Dimensions</strong></p>
+                    {% if product.length %}
+                        <p>Length: {{ product.length }} cm</p>
+                    {% endif %}
+                    {% if product.width %}
+                        <p>Width: {{ product.width }} cm</p>
+                    {% endif %}
+                    {% if product.height %}
+                        <p>Height: {{ product.height }} cm</p>
+                    {% endif %}
+                 {% endif %}
+
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
