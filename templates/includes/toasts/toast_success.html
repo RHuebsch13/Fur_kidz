@@ -29,15 +29,12 @@
                     </div>
                 {% endfor %}
             </div>
-                    {% endif %}
-                    <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
-                        <span class="text-uppercase">Go To Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
+            <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
+                <span class="text-uppercase">Go To Secure Checkout</span>
+                <span class="icon">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </a>
         {% endif %}
     </div>
 </div>
