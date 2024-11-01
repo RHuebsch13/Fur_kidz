@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'whitenoise.runserver_nostatic',
+    'checkout',
 ]
 
 MIDDLEWARE = [
