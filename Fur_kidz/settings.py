@@ -15,14 +15,18 @@ import os
 import environ
 import dj_database_url  
 
+# Import env.py if it exists to load environment variables
 try:
-    from .env import SECRET_KEY
+    import env
 except ImportError:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+    pass
 
+# Base directory path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = True
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+DEBUG = os.getenv('DEBUG') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git']
 
@@ -117,10 +121,10 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'Fur_kidz.wsgi.application'
 
-# PostgreSQL Database
+# Database setup
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://uvm6pobvuvv:iBYrgvGNPaWC@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/ivory_react_ebony_658761'
+        default=f"postgres://{os.getenv('DATABASE_USER')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOST')}/{os.getenv('DATABASE_NAME')}"
     )
 }
 
@@ -173,4 +177,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Stripe API keys and other configuration
 STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_CURRENCY = 'gbp'

@@ -1,7 +1,6 @@
-
-
 # Create your models here.
 import uuid
+from decimal import Decimal  # Import Decimal here
 
 from django.db import models
 from django.db.models import Sum
@@ -28,7 +27,7 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         """
-        Generate a random, unique order number using UUID
+        Generate a random, unique order number using UUID.
         """
         return uuid.uuid4().hex.upper()
 
@@ -37,12 +36,11 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         with delivery cost set at 10% of the order total.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or Decimal(0)
         # Set delivery cost to 10% of the order total
-        self.delivery_cost = self.order_total * 0.10
+        self.delivery_cost = self.order_total * Decimal(0.10)
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
-
 
     def save(self, *args, **kwargs):
         """
