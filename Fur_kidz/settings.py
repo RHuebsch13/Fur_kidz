@@ -52,7 +52,10 @@ INSTALLED_APPS = [
     'bag',
     'whitenoise.runserver_nostatic',
     'checkout',
-    'crispy_forms'
+    'profiles',
+
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
