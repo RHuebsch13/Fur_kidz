@@ -1,8 +1,9 @@
+# Create your models here.
 import uuid
+from decimal import Decimal  # Import Decimal here
 
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
 
 from products.models import Product
 
@@ -22,25 +23,28 @@ class Order(models.Model):
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    original_bag = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    
+    # Added fields for Stripe and webhook functionality
+    subtotal = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)  # New subtotal field
+    original_bag = models.TextField(null=False, blank=False, default='')  # Store the original shopping bag
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')  # Stripe Payment ID
 
     def _generate_order_number(self):
         """
-        Generate a random, unique order number using UUID
+        Generate a random, unique order number using UUID.
         """
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
         """
-        Update grand total each time a line item is added,
+        Update totals each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-        else:
-            self.delivery_cost = 0
+        # Calculate subtotal as the sum of line item totals
+        self.subtotal = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or Decimal(0)
+        self.order_total = self.subtotal  # Assuming order total is the same as subtotal here
+        # Calculate delivery cost as 10% of the order total
+        self.delivery_cost = self.order_total * Decimal(0.10)
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
@@ -60,7 +64,7 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
+    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
@@ -74,3 +78,5 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+

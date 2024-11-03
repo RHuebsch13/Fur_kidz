@@ -240,6 +240,11 @@ Allow users to easily:
   - All links worked correctly, and the site was responsive.
 - **Fix**: No issues encountered.
 
+##### WEBHOOK
+- expectated: The form is on the database if payment flows breaks.
+- testing: In the JavaScript file - comment out the form submission and make another purchase.This simulates either a user who closed the page before the form was submitted
+- result: behaves as expected
+
 ## User Stories Integration
 
 1. **Viewing and Navigation**
