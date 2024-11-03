@@ -15,7 +15,6 @@ import os
 import environ
 import dj_database_url  
 
-# Import env.py if it exists to load environment variables
 try:
     import env
 except ImportError:
