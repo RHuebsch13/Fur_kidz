@@ -13,9 +13,10 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
-    categories = None
+    categories = Category.objects.all()  # Fetch all categories
     sort = None
     direction = None
+    selected_category = None  # Initialize selected_category
 
     if request.GET:
         if 'sort' in request.GET:
@@ -34,7 +35,8 @@ def all_products(request):
 
         if 'category' in request.GET:
             category_id = request.GET['category']
-            products = products.filter(category_id=category_id)  
+            selected_category = get_object_or_404(Category, id=category_id)  # Fetch the selected category
+            products = products.filter(category=selected_category)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -52,9 +54,11 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'selected_category': selected_category,  # Pass the selected category to the template
     }
 
     return render(request, 'products/products.html', context)
+
 
 
 def product_detail(request, product_id):
