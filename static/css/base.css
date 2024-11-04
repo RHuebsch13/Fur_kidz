@@ -10,6 +10,16 @@ body {
     font-family: 'Lato';
 }
 
+/* Set the navbar background color */
+.navbar {
+    background-color: #FAF0F0 !important; 
+}
+
+/* Ensure the navbar is fixed on larger screens */
+.fixed-top-desktop-only {
+    top: 0; /* Set the top position */
+}
+
 /* Header styling */
 header {
     background-color: #FAF0F0;
@@ -23,7 +33,6 @@ header {
 .header-container img {
     max-height: 100px; 
 }
-
 
 /* Styling for the 'Shop Now' button */
 .shop-now-button {
@@ -54,17 +63,16 @@ header {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 /* bootstrap toasts */
-
 .message-container {
     position: fixed;
     top: 72px;
@@ -136,86 +144,124 @@ header {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+        max-width: 80%;
     }
-  }
-  
-  /* Allauth form formatting */
-  
-  .allauth-form-inner-content p {
-      margin-top: 1.5rem; /* mt-4 */
-      color: #6c757d; /* text-secondary */
-  }
-  
-  .allauth-form-inner-content input {
-      border-color: #000;
-      border-radius: 0;
-  }
-  
-  .allauth-form-inner-content label:not([for='id_remember']) {
-      display: none;
-  }
-  
-  .allauth-form-inner-content input::placeholder {
-      color: #aab7c4;
-  }
-  
-  .allauth-form-inner-content button,
-  .allauth-form-inner-content input[type='submit'] {
-      /* btn */
-      display: inline-block;
-      font-weight: 400;
-      color: #fff;
-      text-align: center;
-      vertical-align: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      background-color: #000;
-      border: 1px solid #000;
-      padding: .375rem .75rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      border-radius: 0;
-  
-      /* standard bootstrap btn transitions */
-      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
-  
-  .allauth-form-inner-content button:hover,
-  .allauth-form-inner-content input[type='submit']:hover {	
-      color: #fff;
-      background-color: #222;
-      border-color: #222;
-  }
-  
-  .allauth-form-inner-content a {
-      color: #17a2b8; /* text-info */
-  }
-  
-  /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1030;
-      }
-  
-      .header-container {
-          padding-top: 164px;
-      }
-  }
-  
-  /* pad the top a bit when navbar is collapsed on mobile */
-  @media (max-width: 991px) {
-      .header-container {
-          padding-top: 116px;
-      }
-  
-      body {
-          height: calc(100vh - 116px);
-      }
-  }
+}
+
+/* Allauth form formatting */
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+    /* btn */
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {    
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+    color: #17a2b8; /* text-info */
+}
+
+/* Default styles for larger and tablet screens */
+@media (min-width: 426px) {
+    .navbar-collapse {
+        display: flex !important; /* Show navbar on larger and tablet screens */
+        justify-content: flex-start; /* Align items to start */
+    }
+
+    .navbar-toggler {
+        display: none; /* Hide toggle button on larger screens */
+    }
+
+    /* Align navbar items next to each other on tablet screens */
+    .navbar-nav {
+        flex-direction: row; /* Display items in a row */
+    }
+
+    .nav-item {
+        margin: 0 10px; /* Add space between items */
+    }
+}
+
+/* Toggle button styling */
+.navbar-toggler {
+    background-color: #FAF0F0; /* Light background for the toggle button */
+    border: 1px solid black; /* Add a black outline */
+    border-radius: 4px; /* Optional: Add slight rounding to corners */
+    color: black; /* Ensure text/icon color is black */
+    padding: 0.375rem 0.75rem; /* Add padding for better click area */
+}
+
+/* Remove default icon */
+.navbar-toggler-icon {
+    background-image: none; /* Remove the default icon */
+}
+
+/* Custom toggle icon */
+.navbar-toggler:after {
+    content: '☰'; /* Unicode for a hamburger icon */
+    font-size: 24px; /* Size of the icon */
+    color: black; /* Icon color */
+}
+
+/* Styles for the toggle button on hover */
+.navbar-toggler:hover {
+    background-color: #e9bebe; /* Darker black on hover */
+    border-color: white; /* Change border color to white on hover for contrast */
+}
+
+/* Toggle button visibility on screens 425px and smaller */
+@media (max-width: 425px) {
+    .navbar-collapse {
+        display: none !important; /* Hide navbar by default */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show toggle button */
+    }
+
+    .navbar-collapse.show {
+        display: block !important; /* Show navbar when toggled */
+        position: relative; /* Position it correctly */
+        width: 100%; /* Full width on mobile */
+    }
+}
