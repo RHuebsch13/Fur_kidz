@@ -279,8 +279,11 @@ Automation testing is a software testing process that uses specialized tools and
 
 #### Bug Problems
 - Bugs in initial building:
+  * relational database was used, SQLite installed. This did not allow for some function so had to convert over to PostgreSQL using the code institute PostgreSQL URL provided. his worked must better.
+  * spacing issues where the products heading did not display as they were covered with other content. Custom css was used to crrect this.
 - After deployment:
 - Issues picked up during testing:
+* no delete confirmation message afer deleting. 
 
 ## Deployment
 

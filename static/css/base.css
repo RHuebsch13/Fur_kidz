@@ -148,6 +148,9 @@ header {
     height: 160px; 
 }
 
+#row-height-profile{
+    height:300px;
+}
 
 /* Product Form */
 
@@ -177,10 +180,38 @@ header {
     border-radius: 0;
 }
 
-#select-button{
-    outline: #000;
+#select-button {
+    border: 1px solid #000; 
+    background-color: #e9bebe; 
+    color: #000;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    display: inline-block; 
+    text-align: center;
+} 
+
+#select-button:hover {
+    background-color: black; 
+    color: white; 
 }
 
+#cancel-button {
+    border: 1px solid #000; 
+    background-color: white; 
+    color: #000; 
+    padding: 10px 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    display: inline-block; 
+    text-align: center; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#cancel-button:hover {
+    background-color: #dc3545; 
+    color: white; 
+}
 
 /* -------------------------------- Media Queries */
 
