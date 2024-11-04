@@ -13,6 +13,11 @@ body {
 /* Set the navbar background color */
 .navbar {
     background-color: #FAF0F0 !important; 
+    width: 100%
+}
+
+.navbar-row{
+    background-color: #FAF0F0 !important;
 }
 
 /* Ensure the navbar is fixed on larger screens */
@@ -204,64 +209,64 @@ header {
 /* Default styles for larger and tablet screens */
 @media (min-width: 426px) {
     .navbar-collapse {
-        display: flex !important; /* Show navbar on larger and tablet screens */
-        justify-content: flex-start; /* Align items to start */
+        display: flex !important; 
+        justify-content: flex-start; 
     }
 
     .navbar-toggler {
-        display: none; /* Hide toggle button on larger screens */
+        display: none; 
     }
 
     /* Align navbar items next to each other on tablet screens */
     .navbar-nav {
-        flex-direction: row; /* Display items in a row */
+        flex-direction: row; 
     }
 
     .nav-item {
-        margin: 0 10px; /* Add space between items */
+        margin: 0 10px; 
     }
 }
 
 /* Toggle button styling */
 .navbar-toggler {
-    background-color: #FAF0F0; /* Light background for the toggle button */
-    border: 1px solid black; /* Add a black outline */
-    border-radius: 4px; /* Optional: Add slight rounding to corners */
-    color: black; /* Ensure text/icon color is black */
-    padding: 0.375rem 0.75rem; /* Add padding for better click area */
+    background-color: #FAF0F0; 
+    border-radius: 4px; 
+    color: black; 
+    padding: 0.375rem 0.75rem; 
 }
 
 /* Remove default icon */
 .navbar-toggler-icon {
-    background-image: none; /* Remove the default icon */
+    background-image: none; 
 }
 
 /* Custom toggle icon */
 .navbar-toggler:after {
-    content: '☰'; /* Unicode for a hamburger icon */
-    font-size: 24px; /* Size of the icon */
-    color: black; /* Icon color */
+    text-align: center;
+    content: '☰'; 
+    font-size: 24px; 
+    color: black; 
 }
 
 /* Styles for the toggle button on hover */
 .navbar-toggler:hover {
-    background-color: #e9bebe; /* Darker black on hover */
-    border-color: white; /* Change border color to white on hover for contrast */
+    background-color: #e9bebe; 
+    border-color: white; 
 }
 
 /* Toggle button visibility on screens 425px and smaller */
 @media (max-width: 425px) {
     .navbar-collapse {
-        display: none !important; /* Hide navbar by default */
+        display: none !important; 
     }
 
     .navbar-toggler {
-        display: block; /* Show toggle button */
+        display: block; 
     }
 
     .navbar-collapse.show {
-        display: block !important; /* Show navbar when toggled */
-        position: relative; /* Position it correctly */
-        width: 100%; /* Full width on mobile */
+        display: block !important; 
+        position: relative; 
+        width: 100%; 
     }
 }
