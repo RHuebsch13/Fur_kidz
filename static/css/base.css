@@ -144,6 +144,10 @@ header {
     overflow-y: auto;
 }
 
+.row-height {
+    height: 100px; /* Adjust this value as needed */
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -270,3 +274,10 @@ header {
         width: 100%; 
     }
 }
+
+@media (max-width: 425px) {
+    .row-height {
+        height: 160px; /* Adjust this value as needed */
+    }
+}
+
