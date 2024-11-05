@@ -178,40 +178,49 @@ Allow users to easily:
 
 #### Manual Testing
 ##### 1. CREATE
-- **Expected**: Users can create an account and add products to their cart.
+- **Expected**: Users can create an account, add products to their cart, create reviews for products, and add items to the "Save for Later" list.
 - **Testing**: 
   - Registered a new user account successfully.
   - Added products to the shopping cart.
+  - Added a review to a product.
+  - Saved an item to the "Save for Later" list.
 - **Result**: 
-  - The account was created, and products were added to the cart as expected.
+  - The account was created, products were added to the cart, a review was added successfully, and an item was saved for later as expected.
 - **Fix**: No issues encountered.
 
 ##### 2. READ
-- **Expected**: Users can view product listings, details, and their cart total.
+- **Expected**: Users can view product listings, details, reviews, their cart total, and the "Save for Later" list.
 - **Testing**: 
   - Accessed product listings and detailed product pages.
+  - Viewed existing reviews for products.
   - Monitored the cart total while adding/removing products.
+  - Accessed the "Save for Later" list.
 - **Result**: 
   - Content not responsive to smaller screens.
-- **Fix**: Adjusted media queries. 
+  - Items not moving to save for later list.
+- **Fix**: Adjusted media queries. new postgres database used, moved all data over and removed the old database details and migrations.
 
 ##### 3. UPDATE
-- **Expected**: Users can edit their profiles, update product quantities in their cart.
+- **Expected**: Users can edit their profiles, update product quantities in their cart, edit reviews, and move items from the "Save for Later" list to the cart.
 - **Testing**: 
   - Updated user profile information.
   - Changed product quantities in the cart.
+  - Edited a previously submitted review.
+  - Moved an item from the "Save for Later" list to the cart.
 - **Result**: 
-  - Remove button removed all products from bag. Not one at a time if more than one of the same item.
+  - The remove button removed all products from the bag, not one at a time if more than one of the same item.
 - **Fix**: Updated handling so that one item at a time was removed if there was more than one of the same item.
 
 ##### 4. DELETE
-- **Expected**: Users can delete their accounts and remove products from their cart, while administrators can remove products from inventory.
+- **Expected**: Users can delete their accounts, remove products from their cart, delete reviews, remove items from the "Save for Later" list, and administrators can remove products from inventory.
 - **Testing**: 
   - Deleted a user account.
   - Removed products from the shopping cart.
+  - Deleted a review from a product.
+  - Removed an item from the "Save for Later" list.
   - Removed products from inventory as an administrator.
 - **Result**: 
-  - Account and product deletions executed successfully.
+  - Account, review, and product deletions executed successfully.
 - **Fix**: No issues encountered.
 
 ##### 5. LOGIN
@@ -226,7 +235,7 @@ Allow users to easily:
 ##### 6. GUARDING FROM FORCED ACTIONS
 - **Expected**: Users cannot access restricted pages without proper authentication.
 - **Testing**: 
-  - Attempted to access admin pages without logging in.
+  - Attempted to access admin pages and review functionality without logging in.
 - **Result**: 
   - Access was denied, and users were redirected to the login page.
 - **Fix**: No issues encountered.
@@ -237,13 +246,16 @@ Allow users to easily:
   - Tested all navigation links (home, categories, product pages).
   - Ensured responsive design on various devices.
 - **Result**: 
-  - All links worked correctly, and the site was responsive.
-- **Fix**: No issues encountered.
+  - All links worked correctly, and the site was responsive. However spacong and layout is a problem.
+- **Fix**: Adjusted bootstrap to allow for a responsive view.
 
 ##### WEBHOOK
-- expectated: The form is on the database if payment flows breaks.
-- testing: In the JavaScript file - comment out the form submission and make another purchase.This simulates either a user who closed the page before the form was submitted
-- result: behaves as expected
+- **Expected**: If payment flow breaks, the form data is saved in the database.
+- **Testing**: 
+  - In the JavaScript file, commented out the form submission and made another purchase to simulate a user closing the page before form submission.
+- **Result**: 
+  - Behaved as expected.
+
 
 ## User Stories Integration
 
@@ -283,7 +295,7 @@ Automation testing is a software testing process that uses specialized tools and
   * spacing issues where the products heading did not display as they were covered with other content. Custom css was used to crrect this.
 - After deployment:
 - Issues picked up during testing:
-* no delete confirmation message afer deleting. 
+* no delete confirmation message afer deleting. this to be moved to future features. No time to install. 
 
 ## Deployment
 

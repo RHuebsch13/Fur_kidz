@@ -1,1 +1,1 @@
-web: gunicorn Fur_kidz.wsgi --log-file -
+web: gunicorn fur_kidz.wsgi:application

@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import environ
-import dj_database_url  
+import os
+import dj_database_url 
 
 try:
     import env
@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = os.getenv('DEBUG') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-
-ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git']
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://fur-kidz-49359538ff97.herokuapp.com/']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git'
@@ -178,6 +178,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Stripe API keys and other configuration
 STANDARD_DELIVERY_PERCENTAGE = 10
