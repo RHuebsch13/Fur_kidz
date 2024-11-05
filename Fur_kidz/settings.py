@@ -30,7 +30,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ALLOWED_HOSTS = ['8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://fur-kidz-49359538ff97.herokuapp.com/']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net', 'https://git.heroku.com/fur-kidz.git'
+    'https://fur-kidz-49359538ff97.herokuapp.com/', 'local host'
 ]
 
 INSTALLED_APPS = [
