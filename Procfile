@@ -1,1 +1,1 @@
-web: gunicorn fur-kidz.wsgi:application
+web: gunicorn fur_kidz.wsgi:application
