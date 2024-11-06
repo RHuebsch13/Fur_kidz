@@ -1,5 +1,6 @@
 # FurKidz
-*Am I Responsive Image - Completed Project*
+![Am I Responsive Image](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/responsive.png?raw=true)
+I apologise, I ran out of time and my READ.md is not a detailed as I would like.
 
 ## Table of Contents
 - [UX](#ux)
@@ -26,6 +27,15 @@
 
 ### Project Goals
 Create an e-commerce site that caters to people who enjoy spoiling their cats and dogs. The site will offer luxury items for pets, including toys, treats, beds, and clothes.
+
+## Database Schema
+![database schema](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/ER.png?raw=true)
+
+## Wireframes
+This project followed the walk through project boutique ado, all code has been taken from here and modified. Reviews and Save for later list are new additions.
+![Wireframe Image](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/wireframes1.png?raw=true)
+![Wireframe Image](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/wireframes2.png?raw=true)
+
 
 ### User Goals
 This project aims to assist users in:
@@ -80,51 +90,61 @@ Allow users to easily:
 
 #### Fonts
 #### Colors
-- Colour Scheme: black, white, light pink #FAF0F0
+- Colour Scheme: black, white, shades of soft pink.
 
 #### Styling
-- Backgrounds: The design choice of one solid background color was made to maintain accessibility for the user. Solid colors were used to make the content stand out.
+- Backgrounds: The design choice of one solid background color was made to maintain accessibility for the user. Solid colors were used to make the content stand out. minimal media for a clean, uncluttered finish.
 
 #### Content
-- Wireframes: Designed in Balsamiq, there are 3 wireframes for each page, providing planned layout and views on large screens, medium screens, and small screens.
-  - Big Screens
-  - Medium Screens
-  - Small Screens
+- styled in soft pinks to create a calm vibe, the pet product website displays all you would need to spoil your pets.
 
 ## Features
-
 ### Existing Features
 
+#### User Features
+- **User Registration and Login**: Users can register, log in, and manage their accounts.
+- **User Profile**:
+  - Store default delivery information (address, city, country, etc.).
+  - View order history and saved items.
+- **Save for Later**: Users can save products for future viewing without adding them to the shopping cart.
 
-#### User Account Management
-- **User Registration/Login**: Allow customers to create accounts and log in to view their order history and save preferences.
-- **Profile Management**: Users can update their personal information, shipping addresses, and payment methods.
+#### Product Features
+- **Product Catalog**:
+  - Products organized into categories (e.g., Outfits, Beds).
+  - Detailed product pages include descriptions, prices, images, and dimensions.
+- **Product Categories**: Organized and browsable categories for easier product discovery.
+- **Product Reviews**:
+  - Users can leave reviews on product pages.
+  - Each review is linked to a specific product and user, with timestamps for review creation.
 
-#### Product Management
-- **Product Catalog**: Display products with images, descriptions, prices, and specifications.
-- **Categories and Filters**: Organize products into categories and enable filtering by various attributes (size, color, price range, etc.).
-- **Product Search**: A search bar that allows users to find products quickly.
+#### Shopping and Checkout Features
+- **Shopping Bag**:
+  - Users can add products to a shopping bag with adjustable quantities.
+  - Subtotal, delivery, and grand total calculations are updated in real time.
+- **Checkout**:
+  - Collects and confirms customer details (name, email, address, etc.).
+  - Stripe payment integration with a unique payment ID for secure processing.
+  - Order number generation for tracking.
+- **Order Management**:
+  - Line items for each order display product details and quantities.
+  - Dynamic order total calculation based on product prices and quantity.
 
-#### Shopping Cart
-- **Add to Cart**: Users can add items to a virtual shopping cart.
-- **View Cart**: Users can view the contents of their cart, including quantities and total prices.
-- **Update Cart**: Options to change quantities or remove items from the cart.
+#### Admin Features
+- **Order Management**:
+  - Admins can view, update, and manage orders.
+  - Delivery costs and totals are automatically updated for each order.
+- **Product and Category Management**:
+  - Manage and update product details, images, and prices.
+  - Organize products into categories, allowing for quick category-based filtering.
 
-#### Checkout Process
-- **Secure Checkout**: A secure page for users to enter payment and shipping information.
-- **Guest Checkout**: Allow users to purchase without creating an account.
-- **Order Summary**: Provide a summary of the order before finalizing the purchase.
-- **Integrated Payment Gateway**: Handle transactions securely through third-party services like Stripe.
-
-#### Reviews and Ratings
-- **Customer Reviews**: Allow users to leave feedback and rate products.
-
-#### Mobile Responsiveness
-- **Mobile-Friendly Design**: Ensure the website is responsive and usable on smartphones and tablets.
-
-#### Security Features
-- **SSL Certificate**: Secure the site with HTTPS to protect user data during transactions.
-- **Data Protection**: Compliance with regulations (like GDPR) to protect user data.
+#### Additional Features
+- **Responsive Design**: Designed for a seamless user experience across devices, with adjustments for smaller screens.
+- **Saved Items and Wish List**:
+  - Users can save items for later or add products to a wish list (if enabled).
+  - Saved items are linked to user profiles and stored for future reference.
+- **Calculated Delivery Cost**: Delivery cost is dynamically calculated as 10% of the order total.
+- **Customer Support**:
+  - Contact and support options available for customer inquiries.
 
 
 ### Left to Implement
@@ -280,14 +300,15 @@ Allow users to easily:
 Automation testing is a software testing process that uses specialized tools and scripts to automatically execute test cases, compare actual results with expected outcomes, and report discrepancies. An example of this software is Jest. Only manual testing will be used for this development.
 
 #### Validation Tests
-- Python
-- JavaScript
-- View the PDF - CSS Validation
-- View the PDF - HTML Validation
+- ![Python](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/python.png?raw=true)
+- ![JavaScript](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/java.png?raw=true)
+- ![CSS Validation](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/css.png?raw=true)
+- ![HTML Validation](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/html.png?raw=true)
 
 #### Lighthouse Testing
-- View the PDF - Mobile
-- View the PDF - Desktop
+- ![Mobile](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/lighthouseM.png?raw=true)
+- ![Desktop](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/lighthouseD.png?raw=true)
+- ![Snapshot](https://github.com/RHuebsch13/Fur_kidz/blob/main/docs/lighthouseS.png?raw=true)
 
 #### Bug Problems
 - Bugs in initial building:
@@ -298,6 +319,9 @@ Automation testing is a software testing process that uses specialized tools and
 * no delete confirmation message afer deleting. this to be moved to future features. No time to install. 
 
 ## Deployment
+
+- USE_AWS variable set to true in my env.py file meant that any changes to css were not showing my local browser. Removed it from the env.py file and was anle to se the changes and correct spacing oversight.
+- Email verification was not working recieved server 500 when testing. This was because my EMAIL_HOST_USER was ot set correctly.
 
 ### CI Full Template to Create This Project
 1. Click on 'Use this template' and select 'Create a new repository'.
@@ -343,11 +367,12 @@ Automation testing is a software testing process that uses specialized tools and
 
 ## Credits
 ### Code
-- Code institute Boutique Ado 
+- Code institute Boutique Ado - all code used in this project was adapted from this walk through.
 - [Stripe](https://docs.stripe.com/)
 - [Django](https://docs.djangoproject.com/en/5.1/)
 - [w3schools](https://www.w3schools.com/python/)
 - [Payton Clark Smith](https://www.youtube.com/watch?v=mRWdhN4XFzo)
+- CI tutors
 
 
 ### Content
