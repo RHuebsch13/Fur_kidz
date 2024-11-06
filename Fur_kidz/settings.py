@@ -26,13 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = os.getenv('DEBUG') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+#ACCOUNT_EMAIL_VERIFICATION = 'none'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 
                           '8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net,fur-kidz-49359538ff97.herokuapp.com').split(',')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://fur-kidz-49359538ff97.herokuapp.com',
     'http://localhost',
+    'https://8000-rhuebsch13-furkidz-x0a3ayglog3.ws.codeinstitute-ide.net',
 ]
 
 INSTALLED_APPS = [
