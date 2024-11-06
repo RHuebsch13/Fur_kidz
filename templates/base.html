@@ -141,9 +141,6 @@
         <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
-                    <script>
-                        console.log("Message Level: {{ level }}, Content: {{ message }}");
-                    </script>
                     {% if level == 40 %}
                         {% include 'includes/toasts/toast_error.html' %}
                     {% elif level == 30 %}
